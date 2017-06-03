@@ -17,8 +17,7 @@ var session = require("express-session");
 var db = require("./models");
 //Set up for Express server/app
 var app = express();
-// var PORT = process.env.PORT || 3000;
-app.set("port", (process.env.PORT || 3000));
+var PORT = process.env.PORT || 3000;
 
 
 //set up for the express app to handle data parsing
@@ -54,7 +53,6 @@ require("./routes/barchart-api-routes.js")(app);
 // force: false to maintain all data. true for testing.
 //test
 
-var PORT = process.env.PORT || 3000;
 
 db.sequelize.sync({ force: false }).then(function() {
 	app.listen(PORT, function(){
