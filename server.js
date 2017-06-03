@@ -29,9 +29,10 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
-// app.use("/static", express.static(path.join(__dirname, "public")));
-// app.use(express.static(path.join(__dirname, "/public")));
-app.use(express.static(process.cwd() + "/public"));
+// // app.use("/static", express.static(path.join(__dirname, "public")));
+// // app.use(express.static(path.join(__dirname, "/public")));
+// app.use(express.static(process.cwd() + "/public"));
+app.use(express.static("./public"));
 
 
 // set up for passport test
